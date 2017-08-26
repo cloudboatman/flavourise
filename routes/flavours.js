@@ -1,3 +1,5 @@
+var flavours = require('../flavours/flavourIndex');
+
 module.exports = {
   index: function(req, res) {
       res.render('main', { title: 'Flavourise' });
@@ -9,12 +11,12 @@ module.exports = {
       console.log('Viewing ' + req.params.id);
   },
   create: function(req, res){
-      console.log('Todo created')
+      console.log('Flavour created')
   },
   destroy: function(req, res){
-      console.log('Todo deleted')
+      console.log('Flavour deleted')
   },
   edit: function(req, res){
-      console.log('Todo ' + req.params.id + ' updated')
+      console.log('Flavour ' + req.params.id + ' updated')
   }
 };

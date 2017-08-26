@@ -9,7 +9,6 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-var flavours = require('./flavours/flavourIndex');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

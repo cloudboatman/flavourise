@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var todo = require('./flavours');
+var flavours = require('./flavours.js');
 
-router.get('/', todo.index);
+router.get('/', flavours.index);
 
-router.post('/create', todo.create);
+router.get('/all', flavours.all);
 
-router.post('/destroy/:id', todo.destroy);
+router.post('/create', flavours.create);
 
-router.post('/edit/:id', todo.edit);
+router.post('/destroy/:id', flavours.destroy);
+
+router.post('/edit/:id', flavours.edit);
 
 module.exports = router;
