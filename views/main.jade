@@ -2,7 +2,17 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  a(href='/todos').btn.btn-success.btn-lg View all todos
+  div.search-bar
+    h2 Choose A Flavour
+    form(method="GET" name="flavour-search").flavour-form
+      input(type="text" name="flavour-search" placeholder="Add your flavours here").flavour-form-input
+      button(type="submit").btn.btn-success.btn-lg Search
+  div.search-terms
+  div.results
+    
+    
+    
+    
+  
   
   script(type="text/javascript" src="/javascripts/flavourSeeker.js")

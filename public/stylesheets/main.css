@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Pinyon+Script');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url("/images/Ratatouille.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 6em;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.search-bar input, .search-bar button {
+  display: block;
+  width: 30%;
+  margin: 10px 0 10px 0;
+}
+
+button {
+  background-color: rgba(144, 19, 254, 0.4) !important;
+  border: none !important;
+}
+
+button:hover {
+  background-color: rgba(144, 19, 254, 0.6) !important;
+}
+
+.search-bar input {
+  height: 40px;
+  color: darkgrey;
+}
+
+.search-item {
+  display:inline-block;
+  font-size: 25px;
+  background-color:rgba(255, 255, 255, 0.8);
+  color:black;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
