@@ -1,16 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  div.search-bar
-    h2 Choose A Flavour
-    form(method="GET" name="flavour-search").flavour-form
-      input(type="text" name="flavour-search" placeholder="Add your flavours here").flavour-form-input
-      button(type="submit").btn.btn-success.btn-lg Search
-  div
-    ul#search-terms
-  div.results
+  div.columns
+    div.column.column1
+      h1= title
+          |!
+      div.search-bar
+        h2 Choose A Flavour
+        form(method="GET" name="flavour-search").flavour-form
+          input(type="text" name="flavour-search" placeholder="Add your flavours here").flavour-form-input
+          button(type="submit").btn.btn-success.btn-lg.submit Search
+      div
+        ul#search-terms
+      div.results
     
+    
+    
+    div.column.column2
+      
     
     
     

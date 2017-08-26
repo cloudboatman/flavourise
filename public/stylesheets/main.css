@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Pinyon+Script');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300');
 
+.columns {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 100%;
+}
+
+.column {
+  margin: 0 10px;
+}
+
+.column1 {
+  flex: 1;
+}
+
+.column2 {
+  flex: 1;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -10,6 +33,7 @@ body {
   -o-background-size: cover;
   font-family: 'Montserrat', sans-serif;
   color: white;
+  height: 100%;
 }
 
 a {
@@ -25,16 +49,16 @@ h1 {
 
 .search-bar input, .search-bar button {
   display: block;
-  width: 30%;
+  width: 100%;
   margin: 10px 0 10px 0;
 }
 
-button {
+button.submit {
   background-color: rgba(144, 19, 254, 0.4) !important;
   border: none !important;
 }
 
-button:hover {
+button.submit:hover {
   background-color: rgba(144, 19, 254, 0.6) !important;
 }
 
@@ -59,4 +83,19 @@ ul#search-terms {
 
 li.search-item {
   margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+button.close-button {
+  background-color:rgba(255, 255, 255, 0);
+  outline: none;
+  border: none;
+}
+button.close-button:before {
+  content: 'X';
+  color: #868484;
+  font-size: 21px;
+  right: -9px;
+  top: 0px;
+  position: relative;
 }
