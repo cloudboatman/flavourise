@@ -1,9 +1,9 @@
 module.exports = {
   index: function(req, res) {
-      res.render('main', { title: 'Express Todo' });
+      res.render('main', { title: 'Flavourise' });
   },
   all: function(req, res){
-      res.send('All todos')
+      res.send('All flavours')
   },
   viewOne: function(req, res){
       console.log('Viewing ' + req.params.id);

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var todo = require('./todo');
+var todo = require('./flavours');
 
 router.get('/', todo.index);
 
