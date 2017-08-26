@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var todo = require('./todo');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', todo.index);
+
+router.post('/create', todo.create);
+
+router.post('/destroy/:id', todo.destroy);
+
+router.post('/edit/:id', todo.edit);
 
 module.exports = router;
