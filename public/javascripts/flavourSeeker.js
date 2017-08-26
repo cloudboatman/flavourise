@@ -1,22 +1,29 @@
 $(document).ready(function(){
+
+  // Declare search terms array.
   var searchParams = [];
+
+  // When user enters an ingredient, display it underneath.
   $('.flavour-form').submit(function (event){
     event.preventDefault();
     var item = $('.flavour-form-input').val();
-    console.log(item);
     searchParams.push(item);
-    $('.search-terms')
-        .append('<button></button>')
-        .addClass('search-item')
-        .text(item);
+
+    $('<li></li>').addClass('search-item')
+                  .text(item)
+                  .appendTo('ul#search-terms');
     $('.flavour-form-input').val('');
     $('.flavour-form-input').focus();
-    console.log(searchParams);
-    $('.')
-  })
-  // Display results of input in results div
+  });
+
+
+
   // Push previous search to array
+
+
   // Repeat process with second search
+
+
   // Add section to results div showing combined flavour matches
 
 

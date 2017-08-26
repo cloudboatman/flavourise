@@ -51,3 +51,12 @@ button:hover {
   padding: 5px 10px;
   border-radius: 3px;
 }
+
+ul#search-terms {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li.search-item {
+  margin-right: 5px;
+}
