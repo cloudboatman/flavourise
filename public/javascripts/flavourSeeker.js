@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  jQuery.ajaxSettings.traditional = true;
   // Declare search terms array.
   var searchParams = [];
 
@@ -33,16 +34,12 @@ $(document).ready(function(){
   });
 
   function updateResults() {
-    // $.post('/flavours/:' + searchParams.join('%'), function(data, status) {
-    //   console.log(data);
-    //   console.log(status);
-    //
-    // });
     var data = {};
     data.flavours = searchParams;
     $.ajax({
       url: '/flavours',
       type: 'POST',
+      contentType: "application/json; charset=utf-8",
       data: JSON.stringify(data),
       success: function(res) {
         console.log(res);
