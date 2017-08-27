@@ -5,7 +5,8 @@ module.exports = {
       res.render('main', { title: 'Flavourise' });
   },
   update: function(req, res) {
-    console.log(req.body);
+    console.log(req.params);
+    res.send(req.params);
   }
   // viewOne: function(req, res){
   //     console.log('Viewing ' + req.params.id);

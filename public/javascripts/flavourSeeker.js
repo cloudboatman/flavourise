@@ -9,7 +9,7 @@ $(document).ready(function(){
     var item = $('.flavour-form-input').val();
     // Push search to array
     searchParams.push(item);
-    // updateResults();
+    updateResults();
     var listItem = $('<li></li>').addClass('search-item'),
         button = $('<button></button>').addClass('close-button'),
         span = $('<span></span>').addClass('search-item-name').html(item);
@@ -35,25 +35,11 @@ $(document).ready(function(){
     console.log('searchParams end of close', searchParams);
   });
 
-  // function updateResults() {
-  //   // $post('/flavours?' + $.param({flavours: searchParams.join('%')}))
-  //   $.post('flavours', {
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({
-  //       'flavours': searchParams,
-  //     })
-  //   }), function(err, res) {
-  //     console.log(res);
-  //   }
-  // }
-
-  // Push previous search to array
-
-
-  // Repeat process with second search
-
-
-  // Add section to results div showing combined flavour matches
-
+  function updateResults() {
+    $.post('/flavours?' + $.param({flavours: searchParams.join('%')}), function(err, res) {
+      if(err) throw err;
+      console.log(res);
+    });
+  };
 
 });
