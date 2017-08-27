@@ -36,7 +36,7 @@ $(document).ready(function(){
   });
 
   function updateResults() {
-    $.post('/flavours?' + $.param({flavours: searchParams.join('%')}), function(err, res) {
+    $.post('/flavours/' + $.param({searchParams}), function(err, res) {
       if(err) throw err;
       console.log(res);
     });

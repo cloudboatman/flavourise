@@ -5,19 +5,11 @@ module.exports = {
       res.render('main', { title: 'Flavourise' });
   },
   update: function(req, res) {
-    console.log(req.params);
-    res.send(req.params);
+    item = req.params;
+
+    res.send(flavours.items[0])
+
+
   }
-  // viewOne: function(req, res){
-  //     console.log('Viewing ' + req.params.id);
-  // },
-  // create: function(req, res){
-  //     console.log('Flavour created')
-  // },
-  // destroy: function(req, res){
-  //     console.log('Flavour deleted')
-  // },
-  // edit: function(req, res){
-  //     console.log('Flavour ' + req.params.id + ' updated')
-  // }
+
 };
