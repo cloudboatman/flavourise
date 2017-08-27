@@ -4,9 +4,9 @@ module.exports = {
   index: function(req, res) {
       res.render('main', { title: 'Flavourise' });
   },
-  // update: function(req, res) {
-  //   console.log(req.body);
-  // },
+  update: function(req, res) {
+    console.log(req.body);
+  }
   // viewOne: function(req, res){
   //     console.log('Viewing ' + req.params.id);
   // },

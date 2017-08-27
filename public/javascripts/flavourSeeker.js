@@ -7,7 +7,7 @@ $(document).ready(function(){
   $('.flavour-form').submit(function (event){
     event.preventDefault();
     var item = $('.flavour-form-input').val();
-
+    // Push search to array
     searchParams.push(item);
     // updateResults();
     var listItem = $('<li></li>').addClass('search-item'),
