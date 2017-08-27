@@ -6,7 +6,7 @@ router.get('/', flavours.index);
 //
 // router.get('/all', flavours.all);
 //
-router.post('/flavours/:flavour', flavours.update);
+router.post('/flavours', flavours.update);
 //
 // router.post('/create', flavours.create);
 //

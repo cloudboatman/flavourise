@@ -5,9 +5,12 @@ module.exports = {
       res.render('main', { title: 'Flavourise' });
   },
   update: function(req, res) {
-    // searchParamsy = req.params.split('%');
     // console.log(req);
-    res.send(req.params);
+    // searchParams = req.data;
+    // // console.log(req);
+    var body = req.body;
+    console.log(body);
+    res.send(body);
   }
 
 };

@@ -33,10 +33,20 @@ $(document).ready(function(){
   });
 
   function updateResults() {
-    $.post('/flavours/' + searchParams.join('%'), function(data, status) {
-      console.log(data);
-      console.log(status);
-
+    // $.post('/flavours/:' + searchParams.join('%'), function(data, status) {
+    //   console.log(data);
+    //   console.log(status);
+    //
+    // });
+    var data = {};
+    data.flavours = searchParams;
+    $.ajax({
+      url: '/flavours',
+      type: 'POST',
+      data: JSON.stringify(data),
+      success: function(res) {
+        console.log(res);
+      }
     });
   };
 
