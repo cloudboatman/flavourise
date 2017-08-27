@@ -5,12 +5,17 @@ module.exports = {
       res.render('main', { title: 'Flavourise' });
   },
   update: function(req, res) {
-    // console.log(req);
-    // searchParams = req.data;
-    // // console.log(req);
-    var body = req.body;
-    console.log(body);
-    res.send(body);
+    var searchTerms = req.body.flavours;
+
+    var searchResponse = {};
+
+    for (i = 0; i < searchTerms.length; i++) {
+      console.log(searchResponse);
+      searchResponse[searchTerms[i]] = flavours[searchTerms[i]];
+    }
+    console.log(searchResponse);
+
+    res.send(searchResponse);
   }
 
 };
