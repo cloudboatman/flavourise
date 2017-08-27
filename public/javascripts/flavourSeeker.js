@@ -20,25 +20,23 @@ $(document).ready(function(){
 
     $('.flavour-form-input').val('');
     $('.flavour-form-input').focus();
-    console.log('searchParams open', searchParams);
   });
 
   // When user clicks X on a search term, remove it and update
   $(document).on("click", "button.close-button", function() {
-    console.log('searchParams beginning of close', searchParams);
     var item = $(this).siblings('span').text();
     itemInd = searchParams.indexOf(item);
     searchParams.splice(itemInd, 1);
     // updateResults();
     var parentItem = $(this).closest('li');
     $(parentItem).remove();
-    console.log('searchParams end of close', searchParams);
   });
 
   function updateResults() {
-    $.post('/flavours/' + $.param({searchParams}), function(err, res) {
-      if(err) throw err;
-      console.log(res);
+    $.post('/flavours/' + searchParams.join('%'), function(data, status) {
+      console.log(data);
+      console.log(status);
+
     });
   };
 

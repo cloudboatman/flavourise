@@ -5,11 +5,9 @@ module.exports = {
       res.render('main', { title: 'Flavourise' });
   },
   update: function(req, res) {
-    item = req.params;
-
-    res.send(flavours.items[0])
-
-
+    // searchParamsy = req.params.split('%');
+    // console.log(req);
+    res.send(req.params);
   }
 
 };
