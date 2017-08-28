@@ -68,6 +68,7 @@ $(document).ready(function(){
       });
     });
     // Display the whole ul > li > ul > li to the results div
+    $('.result-title').html("Matching flavours: ");
     $('#results').html(resultList);
   };
 

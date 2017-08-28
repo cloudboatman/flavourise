@@ -17,6 +17,8 @@
 }
 
 .column2 {
+  padding-top: 111px;
+  padding-left: 30px;
   flex: 1;
 }
 
@@ -76,7 +78,7 @@ button.submit:hover {
   border-radius: 3px;
 }
 
-ul#search-terms {
+ul {
   margin-left: 0;
   padding-left: 0;
 }
@@ -98,6 +100,11 @@ button.close-button:before {
   right: -9px;
   top: 0px;
   position: relative;
+}
+
+h2 {
+  font-size: 24px;
+  text-shadow: 2px 2px black;
 }
 
 li.matchArray {
