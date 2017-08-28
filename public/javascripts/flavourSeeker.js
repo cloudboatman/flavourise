@@ -44,6 +44,7 @@ $(document).ready(function(){
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify(data),
       success: function(res) {
+        console.log(res);
         displayResults(res)
       }
     });
