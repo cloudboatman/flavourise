@@ -6,6 +6,10 @@
   flex-direction: row;
   width: 70%;
   height: 100%;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .column {

@@ -51,24 +51,17 @@ $(document).ready(function(){
 
   function displayResults(res) {
 
-    var resultList = $('<ul></ul>').addClass('resultList')
+    var resultList = $('<ul></ul>').addClass('resultList'),
+        matchEl = $('<li></li>').addClass('matchArray'),
+        matchList = $('<ul></ul>').addClass('matchList');
+        $(matchEl).append(matchList);
+        $(resultList).append(matchEl);
+    // Iterate through the res array and append them to the matchList
+    for (i = 0; i < res.length; i++) {
+      var itemEl = $('<li></li>').html(res[i]).addClass('itemEl');
+      $(itemEl).appendTo(matchList);
+    }
 
-    // iterate over the flavour keys in the response
-    Object.keys(res).forEach(function(key, index) {
-      var flavour = key,
-          matchArr = res[key],
-          matchEl = $('<li></li>').addClass('matchArray'),
-          matchList = $('<ul></ul>').addClass('matchList');
-
-      $(matchEl).append(matchList);
-      $(resultList).append(matchEl);
-
-      // iterate over the array of matches
-      matchArr.forEach(function(item, i) {
-        var itemEl = $('<li></li>').html(item).addClass('itemEl');
-        $(itemEl).appendTo(matchList);
-      });
-    });
     // Display the whole ul > li > ul > li to the results div
     $('.result-title').html("Matching flavours: ");
     $('#results').html(resultList);
