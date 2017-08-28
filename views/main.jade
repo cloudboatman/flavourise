@@ -1,10 +1,11 @@
 extends layout
 
 block content
+  header
+    h1= title
+        |!
   div.columns
     div.column.column1
-      h1= title
-          |!
       div.search-bar
         h2 Choose A Flavour:
         form(method="GET" name="flavour-search").flavour-form
