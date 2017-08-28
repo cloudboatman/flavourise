@@ -30,7 +30,7 @@ $(document).ready(function(){
     var item = $(this).siblings('span').text();
     itemInd = searchParams.indexOf(item);
     searchParams.splice(itemInd, 1);
-    // updateResults();
+    updateResults();
     var parentItem = $(this).closest('li');
     $(parentItem).remove();
   });
