@@ -7,18 +7,20 @@ $(document).ready(function(){
   // When user enters an ingredient, display it underneath.
   $('.flavour-form').submit(function (event){
     event.preventDefault();
-    var item = $('.flavour-form-input').val();
+    var item = $('.flavour-form-input').val().toLowerCase();
     // Push search to array
-    searchParams.push(item);
-    updateResults();
-    var listItem = $('<li></li>').addClass('search-item'),
-        button = $('<button></button>').addClass('close-button'),
-        span = $('<span></span>').addClass('search-item-name').html(item);
-
-    $(listItem).append(span);
-    $(span).after(button);
-    $(listItem).appendTo('ul#search-terms');
-
+    if (searchParams.indexOf(item) < 0) {
+      searchParams.push(item)
+      updateResults();
+      var listItem = $('<li></li>').addClass('search-item'),
+          button = $('<button></button>').addClass('close-button'),
+          span = $('<span></span>').addClass('search-item-name').html(item);
+      $(listItem).append(span);
+      $(span).after(button);
+      $(listItem).appendTo('ul#search-terms');
+    } else {
+      alert('You\'ve already got that one!');
+    }
     $('.flavour-form-input').val('');
     $('.flavour-form-input').focus();
   });
