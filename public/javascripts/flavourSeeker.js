@@ -7,18 +7,20 @@ $(document).ready(function(){
   // When user enters an ingredient, display it underneath.
   $('.flavour-form').submit(function (event){
     event.preventDefault();
-    var item = $('.flavour-form-input').val();
+    var item = $('.flavour-form-input').val().toLowerCase();
     // Push search to array
-    searchParams.push(item);
-    updateResults();
-    var listItem = $('<li></li>').addClass('search-item'),
-        button = $('<button></button>').addClass('close-button'),
-        span = $('<span></span>').addClass('search-item-name').html(item);
-
-    $(listItem).append(span);
-    $(span).after(button);
-    $(listItem).appendTo('ul#search-terms');
-
+    if (searchParams.indexOf(item) < 0) {
+      searchParams.push(item)
+      updateResults();
+      var listItem = $('<li></li>').addClass('search-item'),
+          button = $('<button></button>').addClass('close-button'),
+          span = $('<span></span>').addClass('search-item-name').html(item);
+      $(listItem).append(span);
+      $(span).after(button);
+      $(listItem).appendTo('ul#search-terms');
+    } else {
+      alert('You\'ve already got that one!');
+    }
     $('.flavour-form-input').val('');
     $('.flavour-form-input').focus();
   });
@@ -28,7 +30,7 @@ $(document).ready(function(){
     var item = $(this).siblings('span').text();
     itemInd = searchParams.indexOf(item);
     searchParams.splice(itemInd, 1);
-    // updateResults();
+    updateResults();
     var parentItem = $(this).closest('li');
     $(parentItem).remove();
   });
@@ -49,24 +51,17 @@ $(document).ready(function(){
 
   function displayResults(res) {
 
-    var resultList = $('<ul></ul>').addClass('resultList')
+    var resultList = $('<ul></ul>').addClass('resultList'),
+        matchEl = $('<li></li>').addClass('matchArray'),
+        matchList = $('<ul></ul>').addClass('matchList');
+        $(matchEl).append(matchList);
+        $(resultList).append(matchEl);
+    // Iterate through the res array and append them to the matchList
+    for (i = 0; i < res.length; i++) {
+      var itemEl = $('<li></li>').html(res[i]).addClass('itemEl');
+      $(itemEl).appendTo(matchList);
+    }
 
-    // iterate over the flavour keys in the response
-    Object.keys(res).forEach(function(key, index) {
-      var flavour = key,
-          matchArr = res[key],
-          matchEl = $('<li></li>').addClass('matchArray'),
-          matchList = $('<ul></ul>').addClass('matchList');
-
-      $(matchEl).append(matchList);
-      $(resultList).append(matchEl);
-
-      // iterate over the array of matches
-      matchArr.forEach(function(item, i) {
-        var itemEl = $('<li></li>').html(item).addClass('itemEl');
-        $(itemEl).appendTo(matchList);
-      });
-    });
     // Display the whole ul > li > ul > li to the results div
     $('.result-title').html("Matching flavours: ");
     $('#results').html(resultList);
