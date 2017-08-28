@@ -105,7 +105,7 @@ li.matchArray {
 }
 
 li.itemEl {
-  background: red;
+  background: rgba(139, 87, 42, 0.8);
   color: white;
   list-style: none;
   margin: 10px;
