@@ -1,11 +1,10 @@
-
+var flavours = require('../flavours/flavourIndex');
 
 module.exports = {
   index: function(req, res) {
       res.render('main', { title: 'Flavourise' });
   },
   update: function(req, res) {
-    var flavours = require('../flavours/flavourIndex');
     var searchTerms = req.body.flavours;
     var searchLength = searchTerms.length;
     var searchResponse = []; // results array passed to the client side
