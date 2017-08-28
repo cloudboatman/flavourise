@@ -43,8 +43,31 @@ $(document).ready(function(){
       data: JSON.stringify(data),
       success: function(res) {
         console.log(res);
+        displayResults(res)
       }
     });
   };
+
+  function displayResults(res) {
+    console.log('displayResults: ');
+    Object.keys(res).forEach(function(key, index) {
+      console.log(key, res[key]);
+      var flavour = key,
+          matchArr = res[key],
+          matchEl = $('<li></li>').addClass('matchArray'),
+          matchList = $('<ul></ul>').addClass('matchList');
+
+      $(matchEl).append(matchList);
+
+      matchArr.forEach(function(item, i) {
+        var itemEl = $('<li></li>').html(item).addClass('itemEl');
+        $(itemEl).appendTo(matchList);
+      });
+
+      $('ul#results').append(matchList);
+    });
+
+  }
+
 
 });

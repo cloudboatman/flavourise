@@ -99,3 +99,17 @@ button.close-button:before {
   top: 0px;
   position: relative;
 }
+
+li.matchArray {
+  list-style: none;
+}
+
+li.itemEl {
+  background: red;
+  color: white;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  display: inline-block;
+}
