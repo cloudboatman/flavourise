@@ -44,7 +44,6 @@ $(document).ready(function(){
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify(data),
       success: function(res) {
-        console.log(res);
         displayResults(res)
       }
     });
@@ -53,10 +52,7 @@ $(document).ready(function(){
   function displayResults(res) {
 
     var resultList = $('<ul></ul>').addClass('resultList');
-        // matchEl = $('<li></li>').addClass('matchArray'),
-        // matchList = $('<ul></ul>').addClass('matchList');
-        // $(matchEl).append(matchList);
-        // $(resultList).append(matchEl);
+
     // Iterate through the res array and append them to the matchList
     for (i = 0; i < res.length; i++) {
       var itemEl = $('<li></li>').html(res[i]).addClass('itemEl');
@@ -67,6 +63,5 @@ $(document).ready(function(){
     $('.result-title').html("Matching flavours: ");
     $('#results').html(resultList);
   };
-
 
 });
