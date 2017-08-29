@@ -53,7 +53,7 @@ $(document).ready(function(){
 
     var resultList = $('<ul></ul>').addClass('resultList');
 
-    // Iterate through the res array and append them to the matchList
+    // Iterate through the res array and append them to the resultList
     for (i = 0; i < res.length; i++) {
       var itemEl = $('<li></li>').html(res[i]).addClass('itemEl');
       $(itemEl).appendTo(resultList);
