@@ -8,6 +8,6 @@ module.exports = {
   peanut: ["apple", "asparagus", "banana", "beef", "blackcurrent", "broccoli", "carrot", "celery", "chicken", "chilli", "chocolate", "cinnamon", "coconut", "coriander leaf", "cucumber", "grape", "lamb", "lime", "mint", "pork", "potato", "shellfish", "tomato", "vanilla"],
   chicken: ["almond", "anise", "avocado", "bacon", "banana", "basil", "bell pepper", "blue cheese", "cabbage", "caviar", "celery", "chesnut", "chilli", "coconut", "coriander leag", "egg", "garlic", "grape", "hard cheese", "hazelnut", "lemon", "lime", "mushroom", "onion", "oyster", "parsnip", "pea", "peanut", "pear", "potato", "rose", "saffron", "sage", "shellfish", "thyme", "tomato", "truffle", "walnut", "watercress"],
   pork: ["anise", "apple", "apricot", "bacon", "beef", "beetroot", "black pudding", "broccoli", "butternut squash", "cabbage", "celery", "chesnut", "chilli", "cinnamon", "clove", "coconut", "coriander leaf", "coriander seed", "cucumber", "cumin", "dill", "egg", "garlic", "ginger", "globe artichoke", "grape", "grapefruit", "juniper", "mushroom", "oily fish", "onion", "oyster", "parsnip", "pea", "peanut", "pear", "pineapple", "potato", "rhubarb", "rosemary", "sage", "shellfish", "swede", "thyme", "tomato", "truffle", "watercress", "watermelon"],
-  black pudding: ["apple", "bacon"]
+  "black pudding": ["apple", "bacon", "chocolate", "egg", "lamb", "liver", "mint", "onion", "pork", "potato", "rhubarb", "shellfish"]
 
 }

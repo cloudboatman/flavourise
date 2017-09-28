@@ -122,4 +122,5 @@ li.itemEl {
   padding: 10px;
   font-size: 16px;
   display: inline-block;
+  cursor: pointer;
 }

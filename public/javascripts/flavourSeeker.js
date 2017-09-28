@@ -6,6 +6,10 @@ $(document).ready(function(){
 
   // When user enters an ingredient, display it underneath.
   $('.flavour-form').submit(function (event){
+    runSearch(event)
+  });
+
+  function runSearch(event) {
     event.preventDefault();
     var item = $('.flavour-form-input').val().toLowerCase();
     // Push search to array
@@ -23,7 +27,7 @@ $(document).ready(function(){
     }
     $('.flavour-form-input').val('');
     $('.flavour-form-input').focus();
-  });
+  };
 
   // When user clicks X on a search term, remove it and update
   $(document).on("click", "button.close-button", function() {
@@ -63,5 +67,14 @@ $(document).ready(function(){
     $('.result-title').html("Matching flavours: ");
     $('#results').html(resultList);
   };
+
+  // Turn the search results into searchable terms
+  $(document).on("click", ".itemEl", function(event) {
+    // Take the text from the itemEl and put into variable
+    var searchItem = $(this).text();
+    // Make the input box equal to itemEl and submit
+    $('.flavour-form-input').val(searchItem);
+    runSearch(event);
+  });
 
 });
