@@ -13,12 +13,12 @@ module.exports = {
 
     // push all results into the array.
     for (i = 0; i < searchTerms.length; i++) {
-      searchResponse.push(flavours[searchTerms[i]]);
-    };
+        searchResponse.push(flavours[searchTerms[i]]);
+    }
 
     // find common elements between all arrays
     searchResponse = _.intersection.apply(_, searchResponse);
-
+    console.log(searchResponse);
     res.send(searchResponse);
   }
 
