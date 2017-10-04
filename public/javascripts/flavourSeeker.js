@@ -16,7 +16,7 @@ $(document).ready(function(){
     if (searchParams.indexOf(item) < 0) {
       searchParams.push(item)
       updateResults();
-      var listItem = $('<li></li>').addClass('search-item'),
+      var listItem = $('<li></li>').addClass(`search-item ${item}`),
           button = $('<button></button>').addClass('close-button'),
           span = $('<span></span>').addClass('search-item-name').html(item);
       $(listItem).append(span);
@@ -54,18 +54,26 @@ $(document).ready(function(){
   };
 
   function displayResults(res) {
+    if (res.length < 1) {
+      // If no results remove last searched item from searchParams and search item list
+      var item = '.' + searchParams[searchParams.length - 1];
+      searchParams.pop();
+      var li = document.querySelector(item);
+      li.parentNode.removeChild(li);
+      alert('This combination/flavour returned no results, try again!');
+    } else {
+      var resultList = $('<ul></ul>').addClass('resultList');
 
-    var resultList = $('<ul></ul>').addClass('resultList');
+      // Iterate through the res array and append them to the resultList
+      for (i = 0; i < res.length; i++) {
+        var itemEl = $('<li></li>').html(res[i]).addClass('itemEl');
+        $(itemEl).appendTo(resultList);
+      }
 
-    // Iterate through the res array and append them to the resultList
-    for (i = 0; i < res.length; i++) {
-      var itemEl = $('<li></li>').html(res[i]).addClass('itemEl');
-      $(itemEl).appendTo(resultList);
+      // Display the whole ul > li > ul > li to the results div
+      $('.result-title').html("Matching flavours: ");
+      $('#results').html(resultList);
     }
-
-    // Display the whole ul > li > ul > li to the results div
-    $('.result-title').html("Matching flavours: ");
-    $('#results').html(resultList);
   };
 
   // Turn the search results into searchable terms
